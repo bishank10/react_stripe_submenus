@@ -4,44 +4,26 @@ import { useGlobalContext } from "./context"
 import { FaBars } from 'react-icons/fa'
 
 const Hero = () => {
-  const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext()
-  console.log(data);
-  return <nav className="nav">
-    <div className="nav-center">
-      <div className="nav-header">
-        <img src={logo} className="nav-logo" alt="stripe" />
-        <button className="btn toggle-btn" onClick={openSidebar}>
-          <FaBars />
-        </button>
-      </div>
-      <ul className="nav-links">
-        <li >
-          <button className="link-btn">
-            products
-        </button>
-        </li>
-        <li >
-          <button className="link-btn">
-            developers
-        </button>
-        </li>
-        <li >
-          <button className="link-btn">
-            company
-        </button>
-        </li>
-        <li >
-          <button className="link-btn">
-            company
-        </button>
-        </li>
-        <button className="btn signin-btn">
-          sign in
-         </button>
-        
-      </ul>
-    </div>
-  </nav >
+  const {closeSubmenu}=useGlobalContext()
+  return <section className='hero' onMouseOver={closeSubmenu}>
+  <div className='hero-center'>
+    <article className='hero-info'>
+      <h1>
+        Payments infrastructure <br />
+        for the internet
+      </h1>
+      <p>
+        Millions of companies of all sizes—from startups to Fortune 500s—use
+        Stripe’s software and APIs to accept payments, send payouts, and
+        manage their businesses online.
+      </p>
+      <button className='btn'>Start now</button>
+    </article>
+    <article className='hero-images'>
+      <img src={phoneImg} className='phone-img' alt='phone' />
+    </article>
+  </div>
+</section>
 }
 
 export default Hero
